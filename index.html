@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Lorenzo Xavier</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-header">
+            <h1>Payment Lorenzo Xavier
+             Affan</h1>
+            <p>Pilih metode pembayaran yang Anda inginkan</p>
+        </div>
+        
+        <div class="payment-card qris-card">
+            <div class="payment-icon">
+                <i class="fas fa-qrcode"></i>
+            </div>
+            <div class="payment-info">
+                <h3>Pembayaran QRIS</h3>
+                <p>Scan kode QR ini dengan aplikasi dompet digital atau bank</p>
+            </div>
+            <div class="qris-image-container">
+                <img src="qris.jpg" alt="QRIS ENZO" class="qris-image">
+                <div class="qris-overlay">
+                    <button class="download-btn">
+                        <i class="fas fa-download"></i> Simpan QR
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payment-card ewallet-card">
+            <h3>Transfer Dompet Digital</h3>
+            <p>Klik untuk menyalin nomor pembayaran</p>
+            
+            <div class="ewallet-buttons">
+                <button class="ewallet-btn dana-btn" data-number="081234567890">
+                    <img src="https://files.catbox.moe/gdna19.jpeg" alt="DANA">
+                    <span>082118263527</span>
+                    <i class="far fa-copy"></i>
+                </button>
+                
+                <button class="ewallet-btn ovo-btn" data-number="081298765432">
+                    <img src="https://files.catbox.moe/99yywz.jpeg" alt="OVO">
+                    <span>082118263527</span>
+                    <i class="far fa-copy"></i>
+                </button>
+                
+                <button class="ewallet-btn gopay-btn" data-number="081234567890">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg" alt="Gopay">
+                    <span>082118263527</span>
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="payment-notice">
+            <i class="fas fa-info-circle"></i>
+            <p>Setelah pembayaran, harap konfirmasi via WhatsApp dengan bukti transfer.</p>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        <span id="notification-message">Tersalin ke clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

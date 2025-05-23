@@ -1,0 +1,278 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --dark-color: #2d3436;
+    --light-color: #f5f6fa;
+    --success-color: #00b894;
+    --warning-color: #fdcb6e;
+    --danger-color: #d63031;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.payment-container {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
+}
+
+.payment-header {
+    padding: 25px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+}
+
+.payment-header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.payment-header p {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.payment-card {
+    padding: 25px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-card:last-child {
+    border-bottom: none;
+}
+
+.payment-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+
+.qris-card {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 15px;
+}
+
+.qris-card .payment-info {
+    grid-column: 2;
+}
+
+.qris-card h3 {
+    font-size: 18px;
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+.qris-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.qris-image-container {
+    grid-column: 1 / -1;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.qris-image {
+    width: 100%;
+    display: block;
+}
+
+.qris-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.qris-image-container:hover .qris-overlay {
+    opacity: 1;
+}
+
+.download-btn {
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ewallet-card h3 {
+    font-size: 18px;
+    color: var(--dark-color);
+}
+
+.ewallet-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.ewallet-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ewallet-btn {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: left;
+}
+
+.ewallet-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ewallet-btn img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.ewallet-btn span {
+    flex: 1;
+    font-size: 15px;
+    color: var(--dark-color);
+}
+
+.ewallet-btn i {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.dana-btn {
+    border-left: 4px solid #00b894;
+}
+
+.ovo-btn {
+    border-left: 4px solid #4f2d7f;
+}
+
+.gopay-btn {
+    border-left: 4px solid #00aa13;
+}
+
+.payment-notice {
+    padding: 15px 25px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.payment-notice i {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-color);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.notification.show {
+    bottom: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-header h1 {
+        font-size: 24px;
+    }
+    
+    .payment-card {
+        padding: 20px;
+    }
+    
+    .ewallet-btn {
+        padding: 12px;
+    }
+    
+    .ewallet-btn span {
+        font-size: 14px;
+    }
+}
