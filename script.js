@@ -36,31 +36,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Fungsi tombol download QR
+    // Fungsi tombol download QR yang sudah diperbaiki
     const downloadBtn = document.querySelector('.download-btn');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             
-            // Pada implementasi nyata, ini akan memicu download
-            // Untuk contoh ini, kita hanya menampilkan notifikasi
-            notificationMessage.textContent = 'Kode QR berhasil disimpan!';
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 2000);
-            
-            // Implementasi sebenarnya akan seperti:
-            /*
-            const qrImage = document.querySelector('.qris-image');
-            const link = document.createElement('a');
-            link.href = qrImage.src;
-            link.download = 'qris-payment.jpg';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            */
+            try {
+                const qrImage = document.querySelector('.qris-image');
+                
+                // Buat elemen <a> sementara untuk download
+                const link = document.createElement('a');
+                link.href = qrImage.src;
+                link.download = 'qris-payment.jpg'; // Nama file saat didownload
+                
+                // Tambahkan ke DOM dan trigger click
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Tampilkan notifikasi
+                notificationMessage.textContent = 'Kode QR berhasil didownload!';
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Error downloading QR:', error);
+                notificationMessage.textContent = 'Gagal mendownload QR';
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 2000);
+            }
         });
     }
 });
